@@ -1,5 +1,5 @@
 <?php
-$comando = "Get-Process";
+$comando = "Get-ChildItem C:\Users";
 $output = shell_exec("powershell.exe {$comando}");
 echo "<pre>$output</pre>"; 
 
