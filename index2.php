@@ -13,7 +13,7 @@
 
     <div class="justify-center d-flex flex h-screen items-center flex-col">
 
-        <h1 class="text-">Cambiar contraseña de usuario remoto</h1>
+        <h1 class="text-lemon">Cambiar contraseña de usuario remoto</h1>
         <form action="/script/proccess.php" method="post">
             <p>Usuario Admin:</p>
             <input type="text" name="admin_user" required>
