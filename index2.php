@@ -9,27 +9,30 @@
 
 <body>
     <div class="flex h-screen flex-col items-center justify-center">
-        <h1>Cambiar contraseña de usuario remoto</h1>
+
         <form action="/script/proccess.php" method="post">
-            <p>Usuario Admin:</p>
+            <img src="https://www.xhost.cl/wp-content/uploads/xhost-135x70.png" añt="Xhost" />
+            <span class="text-gray-500">Xhost</span>
+            <h1 class="text-2xl font-semibold text-gray-800">Cambiar contraseña de usuario remoto</h1>
+            <p class="class=" mb-16 text-lg text-gray-600">Usuario Admin:</p>
             <input type="text" name="admin_user"
                 class="peer block  appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pr-3 pb-2.5 pt-4 text-sm text-gray-900 focus:border-2 focus:border-blue-600 focus:outline-none focus:ring-0"
                 required>
-            <p>Contraseña Admin:</p>
+            <p class="class=" mb-16 text-lg text-gray-600">Contraseña Admin:</p>
             <input type="password" name="admin_pass"
                 class="peer block  appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pr-3 pb-2.5 pt-4 text-sm text-gray-900 focus:border-2 focus:border-blue-600 focus:outline-none focus:ring-0"
                 required>
-            <p>Dirección IP:</p>
+            <p class="class=" mb-16 text-lg text-gray-600">Dirección IP:</p>
             <input type="text"
                 class="peer block  appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pr-3 pb-2.5 pt-4 text-sm text-gray-900 focus:border-2 focus:border-blue-600 focus:outline-none focus:ring-0"
                 name="ip"
                 class="peer block  appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pr-3 pb-2.5 pt-4 text-sm text-gray-900 focus:border-2 focus:border-blue-600 focus:outline-none focus:ring-0"
                 required>
-            <p>Usuario al que se le quiere cambiar la contraseña:</p>
+            <p class="class=" mb-16 text-lg text-gray-600">Usuario al que se le quiere cambiar la contraseña:</p>
             <input type="text" name="target_user"
                 class="peer block  appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pr-3 pb-2.5 pt-4 text-sm text-gray-900 focus:border-2 focus:border-blue-600 focus:outline-none focus:ring-0"
                 required>
-            <p>Nueva contraseña para el usuario:</p>
+            <p class="class=" mb-16 text-lg text-gray-600">Nueva contraseña para el usuario:</p>
             <input type="password" name="new_pass"
                 class="peer block  appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pr-3 pb-2.5 pt-4 text-sm text-gray-900 focus:border-2 focus:border-blue-600 focus:outline-none focus:ring-0"
                 required>
