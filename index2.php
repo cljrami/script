@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="flex h-screen justify-content-center align-content-center flex-col">
+    <div class="flex h-screen flex-col items-center justify-center">
         <h1>Cambiar contraseña de usuario remoto</h1>
         <form action="/script/proccess.php" method="post">
             <p>Usuario Admin:</p>
