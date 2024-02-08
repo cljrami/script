@@ -20,6 +20,7 @@
         <input type="text" name="target_user" required>
         <p>Nueva contraseña para el usuario:</p>
         <input type="password" name="new_pass" required>
+
         <p><input type="submit" value="Cambiar Contraseña"></p>
     </form>
 </body>
