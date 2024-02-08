@@ -1,20 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
-    <title>Control MAquina Virtual</title>
+    <meta charset="UTF-8">
+    <title>Cambiar contraseña de usuario remoto</title>
 </head>
 
 <body>
-    <h1>Cambio contraseña Usuario Maquina Virtual</h1>
-    <form action="script/proccess.php" method="post">
-        <p>Ingrese la dirección IP de la máquina :</p>
+    <h1>Cambiar contraseña de usuario remoto</h1>
+    <form action="/script/proccess.php" method="post">
+        <p>Usuario Admin:</p>
+        <input type="text" name="admin_user" required>
+        <p>Contraseña Admin:</p>
+        <input type="password" name="admin_pass" required>
+        <p>Dirección IP:</p>
         <input type="text" name="ip" required>
-        <p>Ingrese el nombre de usuario local:</p>
-        <input type="text" name="username" required>
-        <p>Ingrese la nueva contraseña:</p>
-        <input type="password" name="password" required>
-        <p><input type="submit" value="Cambiar"></p>
+        <p>Usuario al que se le quiere cambiar la contraseña:</p>
+        <input type="text" name="target_user" required>
+        <p>Nueva contraseña para el usuario:</p>
+        <input type="password" name="new_pass" required>
+        <p><input type="submit" value="Cambiar Contraseña"></p>
     </form>
 </body>
+
+</html>
+
 
 </html>

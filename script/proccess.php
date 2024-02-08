@@ -1,29 +1,32 @@
 <?php
-// Recibir los datos del formulario html
-$ip = $_POST["ip"]; // La dirección IP de la máquina remota
-$username = $_POST["username"]; // El nombre de usuario local
-$password = $_POST["password"]; // La nueva contraseña
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recibir los datos del formulario HTML
+    $admin_user = $_POST["admin_user"];
+    $admin_pass = $_POST["admin_pass"];
+    $ip = $_POST["ip"];
+    $target_user = $_POST["target_user"];
+    $new_pass = $_POST["new_pass"];
 
-// Escapar los argumentos del shell
-$ip = escapeshellarg($ip);
-$username = escapeshellarg($username);
-$password = escapeshellarg($password);
+    // Escapar los argumentos del shell
+    $admin_user = escapeshellarg($admin_user);
+    $admin_pass = escapeshellarg($admin_pass);
+    $ip = escapeshellarg($ip);
+    $target_user = escapeshellarg($target_user);
+    $new_pass = escapeshellarg($new_pass);
 
-// Construir el comando de powershell
-$command = "powershell -Command \"";
-if (isset ($_POST ['buscar_pac'])) {
-  $cred = Get-Credential; // Pedir las credenciales del administrador
-  $session = New-PSSession -ComputerName $ip -Credential $cred; // Crear la sesión remota
+    // Construir el comando de PowerShell
+    $command = "powershell -Command \"";
+    $command .= "\$securePass = ConvertTo-SecureString -String $admin_pass -AsPlainText -Force; ";
+    $command .= "\$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $admin_user, \$securePass; ";
+    $command .= "Invoke-Command -ComputerName $ip -Credential \$cred -ScriptBlock { ";
+    $command .= "param(\$targetUser, \$newPass); ";
+    $command .= "Set-LocalUser -Name \$targetUser -Password (ConvertTo-SecureString -AsPlainText \$newPass -Force); ";
+    $command .= "} -ArgumentList $target_user, $new_pass; ";
+    $command .= "\"";
+
+    // Ejecutar el comando de PowerShell y obtener la salida
+    $output = shell_exec($command);
+
+    // Mostrar la salida
+    echo "<pre>$output</pre>"; 
 }
-$command .= "$cred = Get-Credential; "; 
-$command .= "$session = New-PSSession -ComputerName $ip -Credential $cred; "; 
-$command .= "Invoke-Command -Session $session -ScriptBlock { Set-LocalUser -Name $username -Password $password }; "; // Cambiar la contraseña de usuario
-$command .= "Remove-PSSession -Session $session; "; // Cerrar la sesión remota
-$command .= "\"";
-
-// Ejecutar el comando de powershell y obtener la salida
-$output = shell_exec($command);
-
-// Mostrar la salida
-echo "<pre>$output</pre>"; 
-?>
