@@ -27,6 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ejecutar el comando de PowerShell y obtener la salida
     $output = shell_exec($command);
 
-    // Mostrar la salida
-    echo "<pre>$output</pre>"; 
+   // Devuelve la salida como respuesta
+    //echo "<pre>$output</pre>";
+    // Genera una alerta en JavaScript
+    echo '<script type="text/javascript">';
+    echo 'alert("Cambio de contraseña realizado con éxito");';
+    echo '</script>';
 }

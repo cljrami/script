@@ -28,5 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $output = shell_exec($command);
 
     // Devuelve la salida como respuesta
-    echo "<pre>$output</pre>";
+    //echo "<pre>$output</pre>";
+    // Genera una alerta en JavaScript
+    echo '<script type="text/javascript">';
+    echo 'alert("Cambio de contraseña realizado con éxito");';
+    echo '</script>';
 }
