@@ -13,7 +13,7 @@
         10 flex h-screen flex-col items-center justify-center">
         <div
             class="grid grid-cols-1  lg:border-2 rounded-none lg:border-black-200 mt-10 rounded p-10  hover:rounded-lg">
-            <form action="/script/proccess.php" method="post">
+            <form action="/script/proccess2.php" method="post">
 
                 <div class="container mx-auto grid grid-cols-12 p-0">
                     <div class="grid col-span-6 md:col-span-6 lg:col-span-6">Admin</div>
