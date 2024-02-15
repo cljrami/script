@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin_pass = escapeshellarg($admin_pass);
     $ip = escapeshellarg($ip);
     $target_user = escapeshellarg($target_user);
-    $target_user = escapeshellarg($new_pass);
+    $new_pass = escapeshellarg($new_pass);
 
     // Construye el comando de PowerShell
     $command = "powershell -Command \"";
