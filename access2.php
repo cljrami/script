@@ -74,3 +74,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '</script>';
   }
 }
+
+
+//<?php
+
+//$url = "https://api.ipify.org";
+//$response = file_get_contents($url);
+
+//echo "Tu IP pública es: $response";
