@@ -3,6 +3,7 @@
 $allowed_ips = array("192.168.5.156");
 
 // Obtener la IP del cliente de manera segura utilizando la cabecera X-Forwarded-For
+// Esta técnica es útil para garantizar que obtengas la dirección IP correcta del cliente, incluso cuando tu aplicación está detrás de un proxy o un equilibrador de carga.
 $client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? '192.168.5.156';
 
 // Verificar si la IP del cliente está en la lista de IPs permitidas
