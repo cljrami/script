@@ -24,6 +24,7 @@ if (is_string($allowed_ips_list)) {
 }
 
 // Verificar si la IP pública está permitida
+
 if (!validate_ip($public_ip) || !in_array($public_ip, $allowed_ips)) {
   echo '<script type="text/javascript">';
   echo 'alert("La IP no está autorizada para realizar esta acción.");';
@@ -73,11 +74,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '</script>';
   }
 }
-
-
-//<?php
-
-//$url = "https://api.ipify.org";
-//$response = file_get_contents($url);
-
-//echo "Tu IP pública es: $response";
