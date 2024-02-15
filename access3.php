@@ -1,9 +1,9 @@
 <?php
 // Lista de IPs permitidas
-$allowed_ips = array("192.168.5.156", "127.0.0.1");
+$allowed_ips = array("192.168.5.156");
 
-// Obtener la IP del cliente desde la solicitud HTTP
-$client_ip = $_GET['ip'];
+// Obtener la IP del cliente de manera segura utilizando la cabecera X-Forwarded-For
+$client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? '192.168.5.156';
 
 // Verificar si la IP del cliente está en la lista de IPs permitidas
 if (in_array($client_ip, $allowed_ips)) {
@@ -23,7 +23,7 @@ if (in_array($client_ip, $allowed_ips)) {
         $target_user = escapeshellarg($target_user);
         $new_pass = escapeshellarg($new_pass);
 
-        // Construir el comando de PowerShell
+        // Ejecutar el comando de PowerShell para cambiar la contraseña
         $command = "powershell -Command \"";
         $command .= "\$securePass = ConvertTo-SecureString -String $admin_pass -AsPlainText -Force; ";
         $command .= "\$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $admin_user, \$securePass; ";
@@ -46,4 +46,3 @@ if (in_array($client_ip, $allowed_ips)) {
 } else {
     echo "Acceso no autorizado para la IP: $client_ip";
 }
-?>
