@@ -1,35 +1,12 @@
 <?php
-// Lista de IPs permitidas (IPv4)
-$allowed_ips = array("192.168.5.156");
+// Lista de IPs permitidas (IPv4 e IPv6)
+$allowed_ips = array("192.168.5.156", "::1");
 
-// Función para verificar si una IP es privada
-function isPrivateIP($ip) {
-    $private_ips = array(
-        // Rangos de direcciones IPv4 privadas
-        '10.0.0.0|10.255.255.255',
-        '172.16.0.0|172.31.255.255',
-        '192.168.0.0|192.168.255.255',
-        // Rango de direcciones IPv6 privadas
-        'fc00::|fdff:ffff:ffff:ffff:ffff:ffff:ffff:ffff'
-    );
-
-    $long_ip = ip2long($ip);
-    if ($long_ip != -1) {
-        foreach ($private_ips as $range) {
-            list($start, $end) = explode('|', $range);
-            if ($long_ip >= ip2long($start) && $long_ip <= ip2long($end)) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-// Obtener la IP remota del cliente a través del encabezado X-Forwarded-For o REMOTE_ADDR
+// Obtener la IP remota del cliente a través del encabezado X-Forwarded-For
 $remote_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
 
-// Verificar si la IP remota es una dirección IPv4 privada y está en la lista blanca de IPs permitidas
-if (isPrivateIP($remote_ip) && in_array($remote_ip, $allowed_ips)) {
+// Verificar si la IP remota está en la lista blanca de IPs permitidas
+if (in_array($remote_ip, $allowed_ips)) {
     // La IP del cliente está permitida, permitir que el resto del código se ejecute
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -81,6 +58,6 @@ if (isPrivateIP($remote_ip) && in_array($remote_ip, $allowed_ips)) {
     }
 
 } else {
-    // La IP del cliente no está en la lista blanca o no es IPv4 privada, negar el acceso
+    // La IP del cliente no está en la lista blanca, negar el acceso
     echo "Acceso no autorizado para la IP: $remote_ip";
 }
