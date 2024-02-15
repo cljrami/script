@@ -1,6 +1,6 @@
 <?php
 // Lista de IPs permitidas (IPv4 e IPv6)
-$allowed_ips = array("192.168.5.156", "::1");
+$allowed_ips = array( "::1");
 
 // Obtener la IP remota del cliente a través del encabezado X-Forwarded-For
 $remote_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
