@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <title>Cambiar contraseña de usuario remoto</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
 </head>
 
 <body>
-
     <div class="mx-auto p-
         10 flex h-screen flex-col items-center justify-center">
         <div
@@ -61,5 +61,4 @@
         </div>
     </div>
 </body>
-
 </html>
