@@ -5,9 +5,16 @@ $allowed_ips = array("192.168.5.156", "::1");
 // Obtener la IP remota del cliente a través del encabezado X-Forwarded-For
 $remote_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
 
+// Abrir o crear un archivo de registro para escritura (modo append)
+$log_file = fopen("log.txt", "a");
+
+// Registrar la fecha y hora de la solicitud
+$log_entry = "[" . date('Y-m-d H:i:s') . "] ";
+
 // Verificar si la IP remota está en la lista blanca de IPs permitidas
 if (in_array($remote_ip, $allowed_ips)) {
     // La IP del cliente está permitida, permitir que el resto del código se ejecute
+    $log_entry .= "Acceso permitido para la IP: $remote_ip\n";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Recibir los datos del formulario HTML
@@ -18,6 +25,9 @@ if (in_array($remote_ip, $allowed_ips)) {
 
         // Generar una contraseña aleatoria
         $new_pass = generateRandomPassword();
+
+        // Registrar la acción en el archivo de registro incluyendo la contraseña asignada
+        $log_entry .= "Se ha generado una contraseña aleatoria ($new_pass) para el usuario $target_user.\n";
 
         // Verificar si los campos requeridos no están vacíos
         if (!empty($admin_user) && !empty($admin_pass) && !empty($ip) && !empty($target_user)) {
@@ -46,27 +56,36 @@ if (in_array($remote_ip, $allowed_ips)) {
 
             // Verificar si el cambio de contraseña fue exitoso
             if (trim($output) === 'true') {
+                $log_entry .= "Cambio de contraseña realizado con éxito para el usuario $target_user.\n";
                 echo '<script type="text/javascript">';
-                echo 'alert("Cambio de contraseña realizado con éxito. La nueva contraseña es: ' . $new_pass . '");';
+                echo 'alert(Cambio de contraseña realizado con éxito. La nueva contraseña es: ' . $new_pass . ');';
                 echo '</script>';
             } elseif (trim($output) === 'false') {
+                $log_entry .= "El usuario especificado no existe en el equipo remoto.\n";
                 echo "El usuario especificado no existe en el equipo remoto.";
             } else {
+                $log_entry .= "Ocurrió un error al cambiar la contraseña.\n";
                 echo "Ocurrió un error al cambiar la contraseña.";
             }
         } else {
+            $log_entry .= "Todos los campos son obligatorios.\n";
             echo "Todos los campos son obligatorios.";
         }
     }
 
 } else {
     // La IP del cliente no está en la lista blanca, negar el acceso
+    $log_entry .= "Acceso no autorizado para la IP: $remote_ip\n";
     echo "Acceso no autorizado para la IP: $remote_ip";
 }
 
+// Escribir la entrada del log en el archivo
+fwrite($log_file, $log_entry);
+fclose($log_file);
+
 // Función para generar una contraseña aleatoria
-function generateRandomPassword($length = 12) {
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+';
+function generateRandomPassword($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $password = '';
     $charactersLength = strlen($characters);
     for ($i = 0; $i < $length; $i++) {

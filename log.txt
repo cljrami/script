@@ -1,0 +1,12 @@
+[2024-02-19 15:27:34] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-19 15:35:31] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (ptAapAgpid) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-19 15:38:52] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (liKjhuUiwP) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-19 15:39:07] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (tm5cQvNGLO) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
