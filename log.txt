@@ -10,3 +10,9 @@ Cambio de contraseña realizado con éxito para el usuario "123".
 [2024-02-19 15:39:07] Acceso permitido para la IP: ::1
 Se ha generado una contraseña aleatoria (tm5cQvNGLO) para el usuario 123.
 Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-19 16:03:28] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (IHqg0Na6GT) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-19 16:26:46] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (cXhNh5UE9W) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
