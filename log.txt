@@ -16,3 +16,36 @@ Cambio de contraseña realizado con éxito para el usuario "123".
 [2024-02-19 16:26:46] Acceso permitido para la IP: ::1
 Se ha generado una contraseña aleatoria (cXhNh5UE9W) para el usuario 123.
 Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-19 16:28:55] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (K49ccl952G) para el usuario 123wqeqe.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-19 16:39:02] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (8qrXXm6JVa) para el usuario 123.
+Ocurrió un error al cambiar la contraseña.
+[2024-02-19 16:39:25] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (jxRIZpSxZR) para el usuario 123.
+Ocurrió un error al cambiar la contraseña.
+[2024-02-19 16:40:21] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (pKA1VNFwfe) para el usuario 123.
+Ocurrió un error al cambiar la contraseña.
+[2024-02-19 16:41:40] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (0btsWZiz1i) para el usuario 123.
+Ocurrió un error al cambiar la contraseña.
+[2024-02-19 16:42:35] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (aDJ8jNLacQ) para el usuario 123.
+Ocurrió un error al cambiar la contraseña.
+[2024-02-19 16:44:03] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (dE4nodbuaK) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-19 16:44:26] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (IUS4IKWxlJ) para el usuario 123.
+Ocurrió un error al cambiar la contraseña.
+[2024-02-19 16:44:34] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (7z1nRHo6Ly) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-19 16:46:48] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (hKjsrvQwbo) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-19 16:47:38] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (7aVfjUHTl9) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
