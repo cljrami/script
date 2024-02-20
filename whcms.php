@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WHMCS Sample API Call
  *
