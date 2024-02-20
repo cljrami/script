@@ -1,0 +1,22 @@
+[2024-02-19 18:52:34] Intento de cambio de contraseña para el usuario 1234. El usuario no existe en la máquina virtual.
+[2024-02-19 18:53:20] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 18:53:54] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 19:08:14] Intento de cambio de contraseña para el usuario 1234. El usuario no existe en la máquina virtual.
+[2024-02-19 19:08:28] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 19:11:14] Intento de cambio de contraseña para el usuario nombre_usuario_maquina_virtual. El usuario no existe en la máquina virtual.
+[2024-02-19 19:12:07] Intento de cambio de contraseña para el usuario 1234. El usuario no existe en la máquina virtual.
+[2024-02-19 19:12:28] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 19:18:33] Intento de cambio de contraseña para el usuario nombre_usuario_maquina_virtual. El usuario no existe en la máquina virtual.
+[2024-02-19 19:20:07] Intento de cambio de contraseña para el usuario nombre_usuario_maquina_virtual. El usuario no existe en la máquina virtual.
+[2024-02-19 19:21:23] Intento de cambio de contraseña para el usuario 1234. El usuario no existe en la máquina virtual.
+[2024-02-19 19:22:45] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 19:32:57] Intento de cambio de contraseña para el usuario 123456. El usuario no existe en la máquina virtual.
+[2024-02-19 19:33:21] Intento de cambio de contraseña para el usuario 122. El usuario no existe en la máquina virtual.
+[2024-02-19 19:33:43] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 19:35:02] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 19:38:25] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 19:39:29] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 19:45:14] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 19:52:09] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual.
+[2024-02-19 20:10:32] Intento de cambio de contraseña para el usuario 123. El usuario no existe en la máquina virtual o no se puede conectar a la máquina.
+[2024-02-19 20:11:43] Intento de cambio de contraseña para el usuario jrami. Ocurrió un error al cambiar la contraseña.
