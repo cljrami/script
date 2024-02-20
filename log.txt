@@ -71,3 +71,13 @@ Todos los campos son obligatorios.
 [2024-02-20 19:04:34] Acceso permitido para la IP: ::1
 Se ha generado una contraseña aleatoria (va9sbZKqov) para el usuario 123.
 Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-20 19:08:04] Acceso permitido para la IP: ::1
+[2024-02-20 19:08:39] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (TBcVYWuU6Q) para el usuario .
+Todos los campos son obligatorios.
+[2024-02-20 19:09:00] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (frsSXtx5by) para el usuario .
+Todos los campos son obligatorios.
+[2024-02-20 19:11:34] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (2L4luYxHzr) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".

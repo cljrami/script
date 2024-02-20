@@ -1,6 +1,6 @@
 <?php
 // Lista de IPs permitidas (IPv4 e IPv6)
-$allowed_ips = array("192.168.5.125", "::1");
+$allowed_ips = array("192.168.5.126", "::1");
 
 // Obtener la IP remota del cliente a través del encabezado X-Forwarded-For
 $remote_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
@@ -72,7 +72,6 @@ if (in_array($remote_ip, $allowed_ips)) {
             echo "Todos los campos son obligatorios.";
         }
     }
-
 } else {
     // La IP del cliente no está en la lista blanca, negar el acceso
     $log_entry .= "Acceso no autorizado para la IP: $remote_ip\n";
@@ -84,7 +83,8 @@ fwrite($log_file, $log_entry);
 fclose($log_file);
 
 // Función para generar una contraseña aleatoria
-function generateRandomPassword($length = 10) {
+function generateRandomPassword($length = 10)
+{
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $password = '';
     $charactersLength = strlen($characters);
@@ -93,4 +93,3 @@ function generateRandomPassword($length = 10) {
     }
     return $password;
 }
-?>
