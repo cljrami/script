@@ -24,12 +24,6 @@ if (in_array($remote_ip, $allowed_ips)) {
         $ip = $_POST["ip"] ?? '';
         $target_user = $_POST["target_user"] ?? '';
 
-        // Generar una contraseña aleatoria
-        $new_pass = generateRandomPassword();
-
-        // Registrar la acción en el archivo de registro incluyendo la contraseña asignada
-        $log_entry .= "Se ha generado una contraseña aleatoria ($new_pass) para el usuario $target_user.\n";
-
         // Verificar si los campos requeridos no están vacíos
         if (!empty($admin_user) && !empty($admin_pass) && !empty($ip) && !empty($target_user)) {
             // Escapar los argumentos del shell
@@ -37,39 +31,36 @@ if (in_array($remote_ip, $allowed_ips)) {
             $admin_pass = escapeshellarg($admin_pass);
             $ip = escapeshellarg($ip);
             $target_user = escapeshellarg($target_user);
-            $new_pass = escapeshellarg($new_pass);
 
-            // Verificar si el usuario existe en el equipo remoto
-            $check_user_command = "powershell -Command \"if(Get-LocalUser -Name $target_user -ErrorAction SilentlyContinue) { echo 'true'; } else { echo 'false'; }\"";
-            $user_exists = trim(shell_exec($check_user_command));
+            // Construir el comando de PowerShell
+            $command = "powershell -Command \"";
+            $command .= "\$securePass = ConvertTo-SecureString -String $admin_pass -AsPlainText -Force; ";
+            $command .= "\$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $admin_user, \$securePass; ";
+            $command .= "\$userExists = Get-LocalUser -Name $target_user -ErrorAction SilentlyContinue; ";
+            $command .= "if(\$userExists) { ";
+            $command .= "Set-LocalUser -Name $target_user -Password (ConvertTo-SecureString -AsPlainText $new_pass -Force); ";
+            $command .= "echo 'true'; ";
+            $command .= "} else { echo 'false'; } ";
+            $command .= "\"";
 
-            if ($user_exists === 'true') {
-                // El usuario existe, proceder con el cambio de contraseña
-                $change_pass_command = "powershell -Command \"";
-                $change_pass_command .= "\$securePass = ConvertTo-SecureString -String $admin_pass -AsPlainText -Force; ";
-                $change_pass_command .= "\$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $admin_user, \$securePass; ";
-                $change_pass_command .= "Invoke-Command -ComputerName $ip -Credential \$cred -ScriptBlock { ";
-                $change_pass_command .= "param(\$targetUser, \$newPass); ";
-                $change_pass_command .= "Set-LocalUser -Name \$targetUser -Password (ConvertTo-SecureString -AsPlainText \$newPass -Force); ";
-                $change_pass_command .= "} -ArgumentList $target_user, $new_pass; ";
-                $change_pass_command .= "\"";
+            // Ejecutar el comando de PowerShell y obtener la salida
+            $output = shell_exec($command);
 
-                // Ejecutar el comando de cambio de contraseña
-                $output = shell_exec($change_pass_command);
-
-                if ($output !== null) {
-                    $log_entry .= "Cambio de contraseña realizado con éxito para el usuario $target_user.\n";
-                    echo '<script type="text/javascript">';
-                    echo 'alert("Cambio de contraseña realizado con éxito. La nueva contraseña es: ' . $new_pass . '");';
-                    echo '</script>';
-                } else {
-                    $log_entry .= "Ocurrió un error al cambiar la contraseña.\n";
-                    echo "Ocurrió un error al cambiar la contraseña.";
-                }
-            } else {
-                // El usuario no existe en el equipo remoto
+            // Verificar si el cambio de contraseña fue exitoso
+            if (trim($output) === 'true') {
+                // Generar una contraseña aleatoria
+                $new_pass = generateRandomPassword();
+                // Registrar la acción en el archivo de registro incluyendo la contraseña asignada
+                $log_entry .= "Se ha generado una contraseña aleatoria ($new_pass) para el usuario $target_user y se ha cambiado.\n";
+                echo '<script type="text/javascript">';
+                echo 'alert("Cambio de contraseña realizado con éxito. La nueva contraseña es: ' . $new_pass . '");';
+                echo '</script>';
+            } elseif (trim($output) === 'false') {
                 $log_entry .= "El usuario especificado no existe en el equipo remoto.\n";
                 echo "El usuario especificado no existe en el equipo remoto.";
+            } else {
+                $log_entry .= "Ocurrió un error al cambiar la contraseña.\n";
+                echo "Ocurrió un error al cambiar la contraseña.";
             }
         } else {
             $log_entry .= "Todos los campos son obligatorios.\n";

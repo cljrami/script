@@ -229,3 +229,28 @@ Cambio de contraseña realizado con éxito para el usuario "123".
 [2024-02-21 22:31:07] Acceso permitido para la IP: ::1
 Se ha generado una contraseña aleatoria (Vde27u0yk8) para el usuario 1234.
 El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:57:32] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (Z1sHZ63tvR) para el usuario 1234.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:57:41] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (iTrTZQCA3h) para el usuario 123.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:57:55] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (pCvuwJWhQC) para el usuario 1234.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:59:41] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:59:55] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 23:00:02] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 23:00:53] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 23:02:18] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 23:02:39] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (lV79AJ8nPC) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-21 23:02:54] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (7Ud0NpZ08Y) para el usuario 1234.
+El usuario especificado no existe en el equipo remoto.
