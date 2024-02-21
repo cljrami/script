@@ -165,3 +165,67 @@ Cambio de contraseña realizado con éxito para el usuario "123".
 [2024-02-21 20:25:39] Acceso permitido para la IP: ::1
 Se ha generado una contraseña aleatoria (xJoAEdqCZZ) para el usuario 123.
 Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-21 21:51:34] Acceso no autorizado para la IP: ::1
+[2024-02-21 21:51:40] Acceso no autorizado para la IP: ::1
+[2024-02-21 21:59:18] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (M7cToRgRYS) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-21 22:01:33] Acceso no autorizado para la IP: ::1
+[2024-02-21 22:02:32] Acceso no autorizado para la IP: 
+[2024-02-21 22:03:00] Acceso no autorizado para la IP: ::1
+[2024-02-21 22:05:52] Acceso no autorizado para la IP: ::1
+[2024-02-21 22:06:41] Acceso no autorizado para la IP: ::1
+[2024-02-21 22:07:01] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (IlgOThVMpg) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-21 22:07:11] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (LltQGruOHy) para el usuario 1234.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:07:29] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (D1ZMDyMlhx) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-21 22:09:08] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (qSS7g33O9m) para el usuario 1234435.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:09:21] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (Adqa7RWonE) para el usuario 1234435.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:14:12] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:14:45] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:15:18] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:15:53] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (OfmvCd1hNp) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-21 22:17:23] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:17:57] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:19:55] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:21:04] Acceso no autorizado para la IP: ::1
+[2024-02-21 22:21:34] Acceso no autorizado para la IP: ::1
+[2024-02-21 22:21:38] Acceso no autorizado para la IP: ::1
+[2024-02-21 22:23:18] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (ErAgkn7Bye) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-21 22:23:35] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (KGNG4RTrzS) para el usuario 1234.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:26:27] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:26:57] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:27:17] Acceso permitido para la IP: ::1
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:29:08] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (gMs4TJUi5c) para el usuario 123.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 22:30:20] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (0WihItg9EQ) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-21 22:31:07] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (Vde27u0yk8) para el usuario 1234.
+El usuario especificado no existe en el equipo remoto.

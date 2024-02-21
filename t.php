@@ -1,14 +1,99 @@
-<!DOCTYPE html>
-<html lang="es">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Proyecto con Tailwind CSS</title>
+// Obtener la IP remota del cliente a través del encabezado X-Forwarded-For
+$remote_ip = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'];
 
-</head>
+// Lista de IPs permitidas (IPv4 e IPv6)
+$allowed_ips = array("192.168.5.156", "::1");
 
-<body>
-    <div class="mx-0 container p-4"><a href="https://adamwathan.me/css-utility-classes-and-separation-of-concerns/" class="text-sky-500 font-black text-4xl dark:text-sky-400 hover:text-black" target="_blank" rel="noopener noreferrer">a few thousand words</a></div>
-    <script src="https://cdn.tailwindcss.com"></script>
-</body>
+// Abrir o crear un archivo de registro para escritura (modo append)
+$log_file = fopen("log.txt", "a");
+
+// Registrar la fecha y hora de la solicitud
+$log_entry = "[" . date('Y-m-d H:i:s') . "] ";
+
+// Verificar si la IP remota está en la lista blanca de IPs permitidas
+if (in_array($remote_ip, $allowed_ips)) {
+    // La IP del cliente está permitida, permitir que el resto del código se ejecute
+    $log_entry .= "Acceso permitido para la IP: $remote_ip\n";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Recibir los datos del formulario HTML
+        $admin_user = $_POST["admin_user"] ?? '';
+        $admin_pass = $_POST["admin_pass"] ?? '';
+        $ip = $_POST["ip"] ?? '';
+        $target_user = $_POST["target_user"] ?? '';
+
+        // Generar una contraseña aleatoria
+        $new_pass = generateRandomPassword();
+
+        // Registrar la acción en el archivo de registro incluyendo la contraseña asignada
+        $log_entry .= "Se ha generado una contraseña aleatoria ($new_pass) para el usuario $target_user.\n";
+
+        // Verificar si los campos requeridos no están vacíos
+        if (!empty($admin_user) && !empty($admin_pass) && !empty($ip) && !empty($target_user)) {
+            // Escapar los argumentos del shell
+            $admin_user = escapeshellarg($admin_user);
+            $admin_pass = escapeshellarg($admin_pass);
+            $ip = escapeshellarg($ip);
+            $target_user = escapeshellarg($target_user);
+            $new_pass = escapeshellarg($new_pass);
+
+            // Verificar si el usuario existe en el equipo remoto
+            $check_user_command = "powershell -Command \"if(Get-LocalUser -Name $target_user -ErrorAction SilentlyContinue) { echo 'true'; } else { echo 'false'; }\"";
+            $user_exists = trim(shell_exec($check_user_command));
+
+            if ($user_exists === 'true') {
+                // El usuario existe, proceder con el cambio de contraseña
+                $change_pass_command = "powershell -Command \"";
+                $change_pass_command .= "\$securePass = ConvertTo-SecureString -String $admin_pass -AsPlainText -Force; ";
+                $change_pass_command .= "\$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $admin_user, \$securePass; ";
+                $change_pass_command .= "Invoke-Command -ComputerName $ip -Credential \$cred -ScriptBlock { ";
+                $change_pass_command .= "param(\$targetUser, \$newPass); ";
+                $change_pass_command .= "Set-LocalUser -Name \$targetUser -Password (ConvertTo-SecureString -AsPlainText \$newPass -Force); ";
+                $change_pass_command .= "} -ArgumentList $target_user, $new_pass; ";
+                $change_pass_command .= "\"";
+
+                // Ejecutar el comando de cambio de contraseña
+                $output = shell_exec($change_pass_command);
+
+                if ($output !== null) {
+                    $log_entry .= "Cambio de contraseña realizado con éxito para el usuario $target_user.\n";
+                    echo '<script type="text/javascript">';
+                    echo 'alert("Cambio de contraseña realizado con éxito. La nueva contraseña es: ' . $new_pass . '");';
+                    echo '</script>';
+                } else {
+                    $log_entry .= "Ocurrió un error al cambiar la contraseña.\n";
+                    echo "Ocurrió un error al cambiar la contraseña.";
+                }
+            } else {
+                // El usuario no existe en el equipo remoto
+                $log_entry .= "El usuario especificado no existe en el equipo remoto.\n";
+                echo "El usuario especificado no existe en el equipo remoto.";
+            }
+        } else {
+            $log_entry .= "Todos los campos son obligatorios.\n";
+            echo "Todos los campos son obligatorios.";
+        }
+    }
+} else {
+    // La IP del cliente no está en la lista blanca, negar el acceso
+    $log_entry .= "Acceso no autorizado para la IP: $remote_ip\n";
+    echo "Acceso no autorizado para la IP: $remote_ip";
+}
+
+// Escribir la entrada del log en el archivo
+fwrite($log_file, $log_entry);
+fclose($log_file);
+
+// Función para generar una contraseña aleatoria
+function generateRandomPassword($length = 10)
+{
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $password = '';
+    $charactersLength = strlen($characters);
+    for ($i = 0; $i < $length; $i++) {
+        $password .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $password;
+}
