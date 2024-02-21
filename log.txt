@@ -81,3 +81,36 @@ Todos los campos son obligatorios.
 [2024-02-20 19:11:34] Acceso permitido para la IP: ::1
 Se ha generado una contraseña aleatoria (2L4luYxHzr) para el usuario 123.
 Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-20 22:42:37] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (6nbxrwij7L) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-20 22:43:03] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (f9zEwAnI4E) para el usuario .
+Todos los campos son obligatorios.
+[2024-02-20 22:43:14] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (PKHB2LihYE) para el usuario 123.
+Todos los campos son obligatorios.
+[2024-02-20 22:43:20] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (rkF2iRYj9F) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-20 22:44:24] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (WIxBy5CZ9f) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-20 22:45:58] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (BhF9EQpbBv) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
+[2024-02-20 22:46:19] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (cxNhSvalwh) para el usuario .
+Todos los campos son obligatorios.
+[2024-02-20 22:46:45] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (k8EzcTGR5x) para el usuario 123.
+Ocurrió un error al cambiar la contraseña.
+[2024-02-20 22:46:58] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (GuJVvzado1) para el usuario 1234.
+Ocurrió un error al cambiar la contraseña.
+[2024-02-20 22:47:06] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (IPLGiTR59X) para el usuario 1234.
+El usuario especificado no existe en el equipo remoto.
+[2024-02-21 12:46:47] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (M6ESpde5lL) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
