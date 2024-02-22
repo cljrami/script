@@ -11,7 +11,7 @@
  */
 
 // API Connection Details
-$whmcsUrl = "https://clientes.xhost.cl/xhostadmin/";
+$whmcsUrl = "https://clientes.xhost.cl/includes/api.php";
 
 // For WHMCS 7.2 and later, we recommend using an API Authentication Credential pair.
 // Learn more at http://docs.whmcs.com/API_Authentication_Credentials
