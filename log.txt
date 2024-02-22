@@ -254,3 +254,6 @@ Cambio de contraseña realizado con éxito para el usuario "123".
 [2024-02-21 23:02:54] Acceso permitido para la IP: ::1
 Se ha generado una contraseña aleatoria (7Ud0NpZ08Y) para el usuario 1234.
 El usuario especificado no existe en el equipo remoto.
+[2024-02-21 23:04:27] Acceso permitido para la IP: ::1
+Se ha generado una contraseña aleatoria (lX8Q9mi165) para el usuario 123.
+Cambio de contraseña realizado con éxito para el usuario "123".
